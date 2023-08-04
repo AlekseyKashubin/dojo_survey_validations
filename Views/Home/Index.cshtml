@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Dojo Survey";
+}
+@model Result
+
+
+<div class="text-center border black">
+    <h1 class="display-4">Welcome</h1>
+
+
+
+    <form class="bg-dark text-light p-5 d-flex flex-column align-items-start w-300 " asp-action="Create" asp-controller="Home" method="post">
+
+        <div class="mb-3 fs-5 w-100">
+            <label  asp-for="Name">Your Name: </label>
+            <input asp-for="Name" type="text" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span> 
+        </div>
+
+        <div class="mb-3 fs-5 w-100 d-flex  justify-content-between">
+            <label asp-for="Location">Location: </label>
+            <select asp-for="Location" id="dropbox">
+                <option value="">Pick a City</option>
+                <option value="Seattle">Seattle</option>
+                <option value="San Diego">San Diego</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Chicago">Chicago</option>
+            </select>
+            <span asp-validation-for="Location" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 fs-5 w-100 d-flex justify-content-between">
+            <label asp-for="FavLang">Favorite Language: </label>
+            <select asp-for="FavLang" id="dropbox">
+                <option value="">Pick a Language</option>
+                <option value="C#">C#</option>
+                <option value="Java ">Java</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+            </select>
+            <span asp-validation-for="FavLang" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3 fs-5 ">
+            <label asp-for="Comment">Comment (optional): </label>
+            <textarea rows="4" cols="60" type="text" asp-for="Comment"></textarea>
+            <span asp-validation-for="Comment" class="text-danger"></span>
+        </div>
+
+        <button class="btn btn-outline-light" type="submit">Submit</button>
+
+    </form>
+</div>

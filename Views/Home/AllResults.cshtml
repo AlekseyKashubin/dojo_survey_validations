@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Result Page";
+}
+@model List<Result>
+
+<body>
+
+    @foreach (Result r in Model)
+    {
+        <div class="bg-dark text-light p-2 w-100">
+            <h1 class="title">Submitted Info </h1>
+            <h3>Name: @r.Name</h3>
+            <h3>Dojo Location: @r.Location</h3>
+            <h3>Favortie Language: @r.FavLang </h3>
+            <h3>Comments (optional): @r.Comment </h3>
+            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index"><Home></a>
+        </div>
+    }
+
+
+</body>
+
+</html>
